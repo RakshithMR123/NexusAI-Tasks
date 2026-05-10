@@ -1,8 +1,8 @@
-# Run and deploy your AI Studio app
+# Run and deploy your NexusAI Tasker app
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/010231e6-11a9-4c0f-a26a-6e5d505f600c
+View your app NexusAI Tasker in: https://ai.studio/apps/010231e6-11a9-4c0f-a26a-6e5d505f600c
 
 ## Run Locally
 
