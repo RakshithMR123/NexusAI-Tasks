@@ -1,0 +1,77 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Helpers ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isEmailVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // --- Users ---
+    match /users/{userId} {
+      allow get: if isSignedIn() && request.auth.uid == userId;
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    // --- Lists ---
+    match /lists/{listId} {
+      function isListMember() {
+        return isSignedIn() && (resource != null && resource.data.members[request.auth.uid] != null);
+      }
+
+      function isListOwner() {
+        return isSignedIn() && ((resource != null && resource.data.ownerId == request.auth.uid) || (incoming() != null && incoming().ownerId == request.auth.uid));
+      }
+
+      function isListEditor() {
+        return isListOwner() || (isSignedIn() && resource != null && resource.data.members[request.auth.uid] == 'editor');
+      }
+
+      allow get: if isSignedIn() && (isListMember() || (resource != null && resource.data.ownerId == request.auth.uid));
+      allow list: if isSignedIn() && (resource.data.members[request.auth.uid] != null || resource.data.ownerId == request.auth.uid);
+      allow create: if isSignedIn() && incoming().ownerId == request.auth.uid;
+      allow update: if isSignedIn() && (existing().ownerId == request.auth.uid || existing().members[request.auth.uid] == 'editor');
+      allow delete: if isSignedIn() && existing().ownerId == request.auth.uid;
+
+      // --- Tasks ---
+      match /tasks/{taskId} {
+        function canAccessList() {
+          let list = get(/databases/$(database)/documents/lists/$(listId)).data;
+          return isSignedIn() && (list.ownerId == request.auth.uid || list.members[request.auth.uid] != null);
+        }
+        
+        function canModifyList() {
+          let list = get(/databases/$(database)/documents/lists/$(listId)).data;
+          return isSignedIn() && (list.ownerId == request.auth.uid || list.members[request.auth.uid] == 'editor');
+        }
+
+        allow read: if canAccessList();
+        allow create: if canModifyList() && incoming().creatorId == request.auth.uid;
+        allow update: if canModifyList() && incoming().creatorId == existing().creatorId;
+        allow delete: if canModifyList();
+      }
+    }
+
+    // Support for collectionGroup tasks query
+    match /{path=**}/tasks/{taskId} {
+      allow read: if isSignedIn() && resource.data.creatorId == request.auth.uid;
+    }
+  }
+}

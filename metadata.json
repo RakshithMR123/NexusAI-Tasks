@@ -1,0 +1,6 @@
+{
+  "name": "NexusAI Tasks",
+  "description": "A premium, AI-powered task management and collaboration platform with real-time syncing, productivity insights, and advanced organizational tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["Real-time Collaboration", "AI Task Intelligence", "Productivity Analytics"]
+}
