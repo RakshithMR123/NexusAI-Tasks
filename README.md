@@ -1,5 +1,8 @@
 # NexusAI Tasker app
 
+Its a cloud to-do web app  where users can create, edit, mark as completed, 
+and delete to-do tasks, with data stored in the cloud.
+
 This contains everything you need to run app locally.
 
 ## Run Locally
