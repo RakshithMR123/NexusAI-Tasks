@@ -18,3 +18,4 @@ View your app NexusAI Tasker in: https://ai.studio/apps/010231e6-11a9-4c0f-a26a-
 ![image alt](https://github.com/RakshithMR123/NexusAI-Tasks/blob/4e3a82250425bf9c4796ccc9f6727770c05cfdde/Screenshot%202026-05-11%2015.18.38.png)
 ![image alt](https://github.com/RakshithMR123/NexusAI-Tasks/blob/07ea13fd42e08e2e74df85806fe0eb7dd83f341a/Screenshot%202026-05-11%2015.09.12.png)
 ![image alt](https://github.com/RakshithMR123/NexusAI-Tasks/blob/3bd73b8cda99b53937de9d4a5699fd84160b4b47/Screenshot%202026-05-11%2015.14.35.png)
+![image alt](https://github.com/RakshithMR123/NexusAI-Tasks/blob/30f83f479aba4d88b7ec559c2364ce5467c1a9ae/Screenshot%202026-05-11%2015.17.01.png)
