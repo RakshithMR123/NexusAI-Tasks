@@ -16,3 +16,4 @@ View your app NexusAI Tasker in: https://ai.studio/apps/010231e6-11a9-4c0f-a26a-
    `nmp run dev`
 ![image alt](https://github.com/RakshithMR123/NexusAI-Tasks/blob/1302cedeaadab5eaaf6f47477f118bb71763444a/Screenshot%202026-05-11%2015.05.08.png)
 ![image alt](https://github.com/RakshithMR123/NexusAI-Tasks/blob/4e3a82250425bf9c4796ccc9f6727770c05cfdde/Screenshot%202026-05-11%2015.18.38.png)
+![image alt](https://github.com/RakshithMR123/NexusAI-Tasks/blob/07ea13fd42e08e2e74df85806fe0eb7dd83f341a/Screenshot%202026-05-11%2015.09.12.png)
