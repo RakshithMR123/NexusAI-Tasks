@@ -14,3 +14,4 @@ View your app NexusAI Tasker in: https://ai.studio/apps/010231e6-11a9-4c0f-a26a-
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `nmp run dev`
+![image alt](https://github.com/RakshithMR123/NexusAI-Tasks/blob/1302cedeaadab5eaaf6f47477f118bb71763444a/Screenshot%202026-05-11%2015.05.08.png)
