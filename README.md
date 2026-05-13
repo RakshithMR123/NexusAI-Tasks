@@ -9,6 +9,8 @@ This contains everything you need to run app locally.
 
 **Prerequisites:**  Node.js
 
+The app is deployed you visit through this link: https://ais-pre-qrwuyv4yyzgblsewu64uo7-154282924385.asia-east1.run.app
+
 
 1. Install dependencies:
    `npm install`
